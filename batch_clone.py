@@ -58,10 +58,10 @@ def batch_clone(input_dir, output_dir=None, model_dir='checkpoints', cfg_path='c
     """
     input_path = Path(input_dir)
     
-    # 如果没有指定输出目录，默认在输入目录的同级创建 "文件夹名_en" 文件夹
+    # 如果没有指定输出目录，默认在输入目录下创建 "文件夹名_en" 子文件夹
     if output_dir is None:
         folder_name = input_path.name  # 获取输入文件夹的名字
-        output_path = input_path.parent / f'{folder_name}_en'
+        output_path = input_path / f'{folder_name}_en'
     else:
         output_path = Path(output_dir)
     
